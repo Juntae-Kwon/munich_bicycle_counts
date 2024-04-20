@@ -72,3 +72,4 @@ df_cycling$comment[which(df_cycling$comment == "Ausfall nach Beschädigung")] <-
 # Replace value of -1 in direction_1 or direction_2 with NA
 df_cycling$direction_1 <- ifelse(df_cycling$direction_1 == -1, NA, df_cycling$direction_1)
 df_cycling$direction_2 <- ifelse(df_cycling$direction_2 == -1, NA, df_cycling$direction_2)
+

@@ -37,8 +37,8 @@ formula_2_lag1 <-
   s(air_temp, bs = 'bs', k = 30) +
   s(hour_weekday, bs = 'cc', k = 60) +
   s(month_year, bs = 'tp', k = 40) +
-  s(lag1_d1, bs = 'bs', k = 20)
-ind +
+  s(lag1_d1, bs = 'bs', k = 20) +
+  ind +
   holiday  
 
 # Fit models to data for all station

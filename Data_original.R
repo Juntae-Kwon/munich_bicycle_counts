@@ -48,8 +48,7 @@ df_cycling <- df_cycling %>%
     month = lubridate::month(ds),
     day = lubridate::day(ds),
     hour = lubridate::hour(ds),
-    dayofweek = lubridate::wday(ds, label = TRUE),
-    hour_weekday = (dayofweek - 1) * 24 + hour
+    dayofweek = lubridate::wday(ds, label = TRUE)
   )
 
 # Translate German into English

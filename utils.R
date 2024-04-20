@@ -72,3 +72,4 @@ split_data_by_station <- function(df, sta) {
            lag1_d2 = dplyr::lag(direction_2))
   return(ret)
 }
+

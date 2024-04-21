@@ -85,7 +85,8 @@ mark_strong_outliers <- function(data, direction) {
     data <- data %>%
       mutate(lower_bound_narrow = Q1 - 1.5 * IQR,
              upper_bound_narrow = Q3 + 1.5 * IQR) %>%
-      arrange(-distance)
+      arrange(-distance) %>%
+      filter(distance < lower_bound_narrow | distance > upper_bound_narrow)
     
   } else if(direction == 2) {
     # compute the L1 distance
@@ -102,7 +103,8 @@ mark_strong_outliers <- function(data, direction) {
     data <- data %>%
       mutate(lower_bound_narrow = Q1 - 1.5 * IQR,
              upper_bound_narrow = Q3 + 1.5 * IQR) %>%
-      arrange(-distance)
+      arrange(-distance) %>%
+      filter(distance < lower_bound_narrow | distance > upper_bound_narrow)
     
   } else {
     stop("direction must be either 1 or 2")

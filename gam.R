@@ -77,3 +77,58 @@ m_Erhardt_1_lag0 <- gam(formula = formula_1_lag0, data = df_Erhardt, family = nb
 m_Erhardt_1_lag1 <- gam(formula = formula_1_lag1, data = df_Erhardt, family = nb, method = "REML")
 m_Erhardt_2_lag0 <- gam(formula = formula_2_lag0, data = df_Erhardt, family = nb, method = "REML")
 m_Erhardt_2_lag1 <- gam(formula = formula_2_lag1, data = df_Erhardt, family = nb, method = "REML")
+
+# plots of partial effects of the model
+plot(m_Arnulf_1_lag0, scale = 0, pages = 1, all.terms = TRUE, trans = exp)
+plot(m_Margareten_2_lag0, scale = 0, pages = 1, all.terms = TRUE, trans = exp)
+
+
+#-------------------------------------#
+# simulation for prediction intervals #
+#-------------------------------------#
+
+# Arnulf
+spi_Arnulf_1_lag0 <- sim_pi(m_Arnulf_1_lag0, df_Arnulf, 1, 1000, 0.995, 1)
+spi_Arnulf_1_lag1 <- sim_pi(m_Arnulf_1_lag1, df_Arnulf, 1, 1000, 0.995, 1)
+spi_Arnulf_2_lag0 <- sim_pi(m_Arnulf_2_lag0, df_Arnulf, 2, 1000, 0.995, 1)
+spi_Arnulf_2_lag1 <- sim_pi(m_Arnulf_2_lag1, df_Arnulf, 2, 1000, 0.995, 1)
+
+# Kreuther
+spi_Kreuther_1_lag0 <- sim_pi(m_Kreuther_1_lag0, df_Kreuther, 1, 1000, 0.995, 1)
+spi_Kreuther_1_lag1 <- sim_pi(m_Kreuther_1_lag1, df_Kreuther, 1, 1000, 0.995, 1)
+spi_Kreuther_2_lag0 <- sim_pi(m_Kreuther_2_lag0, df_Kreuther, 2, 1000, 0.995, 1)
+spi_Kreuther_2_lag1 <- sim_pi(m_Kreuther_2_lag1, df_Kreuther, 2, 1000, 0.995, 1)
+
+# Olympia
+spi_Olympia_1_lag0 <- sim_pi(m_Olympia_1_lag0, df_Olympia, 1, 1000, 0.995, 1)
+spi_Olympia_1_lag1 <- sim_pi(m_Olympia_1_lag1, df_Olympia, 1, 1000, 0.995, 1)
+spi_Olympia_2_lag0 <- sim_pi(m_Olympia_2_lag0, df_Olympia, 2, 1000, 0.995, 1)
+spi_Olympia_2_lag1 <- sim_pi(m_Olympia_2_lag1, df_Olympia, 2, 1000, 0.995, 1)
+
+# Hirsch
+spi_Hirsch_1_lag0 <- sim_pi(m_Hirsch_1_lag0, df_Hirsch, 1, 1000, 0.995, 1)
+spi_Hirsch_1_lag1 <- sim_pi(m_Hirsch_1_lag1, df_Hirsch, 1, 1000, 0.995, 1)
+spi_Hirsch_2_lag0 <- sim_pi(m_Hirsch_2_lag0, df_Hirsch, 2, 1000, 0.995, 1)
+spi_Hirsch_2_lag1 <- sim_pi(m_Hirsch_2_lag1, df_Hirsch, 2, 1000, 0.995, 1)
+
+# Margareten
+spi_Margareten_1_lag0 <- sim_pi(m_Margareten_1_lag0, df_Margareten, 1, 1000, 0.995, 1)
+spi_Margareten_1_lag1 <- sim_pi(m_Margareten_1_lag1, df_Margareten, 1, 1000, 0.995, 1)
+spi_Margareten_2_lag0 <- sim_pi(m_Margareten_2_lag0, df_Margareten, 2, 1000, 0.995, 1)
+spi_Margareten_2_lag1 <- sim_pi(m_Margareten_2_lag1, df_Margareten, 2, 1000, 0.995, 1)
+
+# Erhardt
+spi_Erhardt_1_lag0 <- sim_pi(m_Erhardt_1_lag0, df_Erhardt, 1, 1000, 0.995, 1)
+spi_Erhardt_1_lag1 <- sim_pi(m_Erhardt_1_lag1, df_Erhardt, 1, 1000, 0.995, 1)
+spi_Erhardt_2_lag0 <- sim_pi(m_Erhardt_2_lag0, df_Erhardt, 2, 1000, 0.995, 1)
+spi_Erhardt_2_lag1 <- sim_pi(m_Erhardt_2_lag1, df_Erhardt, 2, 1000, 0.995, 1)
+
+
+#------------------------#
+# obtain strong outliers #
+#------------------------#
+
+mark_strong_outliers(spi_Arnulf_1_lag0, 1)
+
+
+

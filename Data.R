@@ -105,7 +105,7 @@ df <- df %>%
   mutate(holiday = ifelse(school_holiday == 1 | public_holiday == 1, 1, 0)) %>%
   select(-c(school_holiday, public_holiday))
 
-df_temp_precip <- merge(df, temp_precip, by = c("year", "month", "hour", "day"), all.x = TRUE) 
+df_temp_precip <- merge(df, temp_precip, by = c("year", "month", "hour", "day"), all.x = TRUE) %>% select(-c(date.x, date.y))
 df_temp_precip <- data.table(df_temp_precip)
 
 

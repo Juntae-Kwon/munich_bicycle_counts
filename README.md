@@ -1,4 +1,4 @@
-## Consulting Project for my master's program at LMU
+## Consulting Project at LMU
 
 - The source code for my consulting project with Mobility Department in Munich City. 
 - The task is data plausibility check for cycling traffic data offered at [link](https://opendata.muenchen.de).
